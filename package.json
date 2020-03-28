@@ -22,12 +22,14 @@
     "dotenv": "^8.2.0",
     "graphql": "^14.6.0",
     "koa": "^2.11.0",
+    "koa-cors": "0.0.16",
     "koa-graphql": "^0.8.0",
     "koa-router": "^8.0.8",
     "mongoose": "^5.9.6"
   },
   "devDependencies": {
     "@types/koa": "^2.11.2",
+    "@types/koa-cors": "0.0.0",
     "@types/koa-graphql": "^0.8.3",
     "@types/koa-router": "^7.4.0",
     "@types/mongoose": "^5.7.7",
