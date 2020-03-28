@@ -1,0 +1,43 @@
+{
+  "name": "currency-tracker",
+  "version": "0.1.0",
+  "description": "A currency price tracker app built with Koa, GraphQL, MongoDB",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "npm run serve",
+    "build": "npm run build-ts && npm run lint",
+    "serve": "node dist/server.js",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "lint": "tsc --noEmit && eslint \"src/**/*.{js,ts}\" --quiet",
+    "debug": "npm run build && npm run watch-debug",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
+  },
+  "author": "Guedes Lima, Felipe (talktofill@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "graphql": "^14.6.0",
+    "koa": "^2.11.0",
+    "koa-graphql": "^0.8.0",
+    "koa-router": "^8.0.8",
+    "mongoose": "^5.9.6"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.2",
+    "@types/koa-graphql": "^0.8.3",
+    "@types/koa-router": "^7.4.0",
+    "@types/mongoose": "^5.7.7",
+    "@types/node": "^12.12.31",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-talktofill": "^1.0.6",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3"
+  }
+}
