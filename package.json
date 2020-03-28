@@ -19,6 +19,7 @@
   "author": "Guedes Lima, Felipe (talktofill@gmail.com)",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "^2.2.3",
     "dotenv": "^8.2.0",
     "graphql": "^14.6.0",
     "koa": "^2.11.0",
