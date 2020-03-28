@@ -23,6 +23,26 @@ const Mutation = new graphql_1.GraphQLObjectType({
                 const trackModel = new Track_2.default(args);
                 return trackModel.save();
             }
+        },
+        updateTrack: {
+            type: Track_1.default,
+            args: {
+                id: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLID) },
+                fromCurrency: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
+                toCurrency: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
+                fromPrice: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLFloat) },
+                toPrice: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLFloat) },
+                until: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLString) },
+                email: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLString) }
+            },
+            resolve: (root, args) => Track_2.default.findByIdAndUpdate(args.id, args).exec()
+        },
+        deleteTrack: {
+            type: Track_1.default,
+            args: {
+                id: { type: graphql_1.GraphQLNonNull(graphql_1.GraphQLID) }
+            },
+            resolve: (root, args) => Track_2.default.findById(args.id).remove().exec()
         }
     }
 });
