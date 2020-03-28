@@ -7,6 +7,13 @@ Mongoose.connect(env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: tr
 import router from './routes';
 
 const app = new Koa();
+
+/**
+ * API available to any domain for tests
+ */
+app.use((ctx) => {
+  ctx.set('Access-Control-Allow-Origin', '*');
+});
 app.use(router.routes());
 app.use(router.allowedMethods());
 
