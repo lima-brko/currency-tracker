@@ -8,5 +8,8 @@ export const {MONGODB_URI} = process.env;
 export default {
   ENVIRONMENT,
   MONGODB_URI,
-  PORT: process.env.PORT
+  PORT: process.env.PORT,
+  isProd(): boolean {
+    return ENVIRONMENT === 'production';
+  }
 };
