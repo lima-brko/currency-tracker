@@ -13,6 +13,8 @@ A currency price tracker app built with Koa, GraphQL, MongoDB
     id
     fromCurrency
     toCurrency
+    fromPrice
+    toPrice
     email
     until
   }
